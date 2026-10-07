@@ -1,0 +1,28 @@
+PISA attention
+
+An implementation of the PISA paper's mathematical definitions, with optional
+adapters to publicly licensed GPU primitives.
+
+The optional fla-core==0.5.2 dependency provides selected attention and, for
+supported BSA full-prefill inputs, mean_pooling and parallel_nsa_topk. These
+primitives are called from the installed dependency; their source is not bundled
+here. General BSA inputs retain PISA's position-aware routing implementation.
+
+Flash Linear Attention is distributed under the MIT License, copyright
+(c) 2023-2025 Songlin Yang. Its source also credits its contributing authors,
+including Yu Zhang. See the installed fla-core distribution's license and
+https://github.com/fla-org/flash-linear-attention for source and attribution.
+
+Supported CUDA NSA prefill bundles weighted_pool_triton.py, compressed_attention_triton.py
+and utils.py from XunhaoLai/native-sparse-attention-triton at commit
+9bea856c911ebf263be88d797fb28458f82f1d94, copyright 2025 Xunhao Lai & Jianqiao Lu,
+under Apache-2.0. The original license, source hashes and local compatibility
+changes are included beside these files in
+pisa/ops/flash_sparse_attn/nsa_cmp_select/{LICENSE,OFFICIAL_SOURCE.md}.
+
+The SiLU gate/linear autograd operator is adapted from the public xopes code
+at commit 33afe26100f8590272940e55dbee5067a8040da6, under
+Apache-2.0 (xopes authors; author/maintainer Zhen Qin). Source paths:
+xopes/xopes/ops/gate_linear/gate_linear_ag.py and
+xopes/xopes/ops/act/_act_torch/act_torch.py. This package keeps the SiLU
+training specialization and its activation-dtype backward arithmetic.

@@ -1,0 +1,5 @@
+include README.md LICENSE NOTICE
+recursive-include benchmarks *.py
+recursive-include examples *.py
+include scripts/build_release.py
+recursive-include pisa/ops/flash_sparse_attn/nsa_cmp_select LICENSE OFFICIAL_SOURCE.md

@@ -1,0 +1,14 @@
+This directory adapts the public Flame training framework.
+
+Flame is copyright 2023-2025 Songlin Yang and Yu Zhang and is distributed
+under the MIT license in LICENSE. Portions derived from TorchTitan retain
+their Meta Platforms copyright headers and BSD-style license; the
+TorchTitan license from the pinned dependency eddce126 is included as
+LICENSE.torchtitan.
+https://github.com/pytorch/torchtitan
+
+Local changes connect the public xmixers AutoConfig/AutoModel interface to
+independent PISA kernels, preserve PT/CPT target conventions, and add
+model/Adam DCP initialization for a new CPT stage. The public Flame training
+loop, optional parallelism implementations and tools are retained; PISA
+attention currently supports data parallelism only.

@@ -1,0 +1,13 @@
+PISA
+
+Pyramid sparse attention operators and the paper's language-model code.
+The PISA package is distributed under Apache-2.0; see pisa/LICENSE and pisa/NOTICE.
+
+The reused xmixers code retains its license and attribution in xmixers/LICENSE
+and xmixers/NOTICE. Flame retains its upstream MIT license in flame/LICENSE.
+External dependencies retain their authors' licenses.
+
+The checkpoint converter and training-statistics scripts in flame/script are
+adapted from the public Flame scripts under MIT (flame/LICENSE).
+The evaluation harness in xmixers/evals is adapted from the public
+xmixers evaluation harness under Apache-2.0 (xmixers/LICENSE).

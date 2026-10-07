@@ -1,0 +1,45 @@
+diff --git a/lm_eval/tasks/fda/task.py b/lm_eval/tasks/fda/task.py
+index a8261841..144d05c9 100644
+--- a/lm_eval/tasks/fda/task.py
++++ b/lm_eval/tasks/fda/task.py
+@@ -28,10 +28,10 @@ class FDA(ConfigurableTask):
+         return self.dataset["validation"]
+ 
+     def doc_to_text(self, doc):
+-        return doc["text"]
++        return doc["text"].strip()
+ 
+     def doc_to_target(self, doc):
+-        return doc["value"]
++        return doc["value"].strip()
+ 
+     def construct_requests(
+         self, doc, ctx, chat_template=None, apply_chat_template=False, **kwargs
+diff --git a/lm_eval/tasks/siqa/siqa.yaml b/lm_eval/tasks/siqa/siqa.yaml
+index 6e387a73..5569ba82 100644
+--- a/lm_eval/tasks/siqa/siqa.yaml
++++ b/lm_eval/tasks/siqa/siqa.yaml
+@@ -1,5 +1,5 @@
+ task: social_iqa
+-dataset_path: social_i_qa
++dataset_path: allenai/social_i_qa
+ dataset_name: null
+ output_type: multiple_choice
+ training_split: train
+diff --git a/lm_eval/tasks/squad_completion/task.py b/lm_eval/tasks/squad_completion/task.py
+index 79990ade..afa481c4 100644
+--- a/lm_eval/tasks/squad_completion/task.py
++++ b/lm_eval/tasks/squad_completion/task.py
+@@ -29,10 +29,10 @@ class SQUADCompletion(ConfigurableTask):
+         return self.dataset["validation"]
+ 
+     def doc_to_text(self, doc):
+-        return doc["text"]
++        return doc["text"].strip()
+ 
+     def doc_to_target(self, doc):
+-        return doc["value"]
++        return doc["value"].strip()
+ 
+     def construct_requests(
+         self, doc, ctx, chat_template=None, apply_chat_template=False, **kwargs

@@ -1,0 +1,5 @@
+xmixers LLaMA architecture and modules are adapted from the public
+xmixers source, under Apache-2.0.
+LLaMA model/configuration, GLU, RMSNorm and activation definitions retain
+public structure. Kernel adapters, packed cache handling, loss targeting and
+PISA recipe aliases are maintained here. See LICENSE and ../README.md.

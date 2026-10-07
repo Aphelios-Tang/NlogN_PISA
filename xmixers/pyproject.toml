@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=64", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "xmixers"
+version = "0.1.0"
+description = "Public xmixers LLaMA models using standalone PISA operators"
+requires-python = ">=3.10"
+license = { text = "Apache-2.0" }
+dependencies = ["torch>=2.5", "transformers>=4.56.1,<5", "pisa-attention==0.1.0"]
+
+[project.optional-dependencies]
+eval = ["lm-eval==0.4.9.1"]
+
+[tool.setuptools]
+license-files = ["LICENSE", "NOTICE"]
+package-dir = {"" = "."}
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["xmixers", "xmixers.*"]
